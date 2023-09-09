@@ -122,8 +122,9 @@ public class Array {
                 A[i] = A[i+1];
                 // System.out.println("0");
             }
-            A[load-1] = 0;
+            //A[load-1] = 0; // to place 0 behind last element.
             load--;
+            A[load] = 0; // reduce 1 operation which is arithmatic operation?
         }
         return A[index];
 
