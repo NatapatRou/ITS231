@@ -53,9 +53,17 @@ public class SList<T> {
 	void addLast(T element) {
 		// Ex.1 complete the method
         Node<T> newNode = new Node<T>(element);
-        last.next = newNode;
-        last = newNode;
-        size++;
+        if (last == null)
+        {
+        	this.addFirst(element);;
+        }
+        else
+        {
+        	last.next = newNode;
+        	last = newNode;
+            size++;
+        }
+        
 	}
 
 	/**
