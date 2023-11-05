@@ -1,5 +1,3 @@
-package lab06;
-
 public class TestBT {
 	 
     public static void main(String[] args) {

@@ -1,5 +1,3 @@
-package lab06;
-
 public class BTNode<T>
 {
 	T element;

@@ -1,11 +1,9 @@
-package lab06;
-
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
-public class BT<T> {
+public class BT<T>{
 
 	int size;
 	BTNode<T> root = null;
@@ -240,23 +238,29 @@ public class BT<T> {
         	// Case 1: if item it is an open parenthesis
         	if (item.equals("(")) {
         		//add your code here
-		
+                BTNode<String> open = new BTNode<String>(item);
+                parent.push(open);
         	} 
         	else if (isOperator(item)){
         		BTNode<String> temp = new BTNode<String>(item);
         		if (parent.isEmpty()) { // stack is empty
         			// add your code here
+                    parent.push(temp);
         		}
         		else {// stack is not empty
               
         			if(hasHigherPriority(item, parent.peek().element)) {  
         				// add your code here
-            		
-            		
+            	        parent.push(temp);	
         			}
         			else {
         				// add your code here
-
+                        BTNode<String> root = parent.pop();
+                        BT<String> Rsubtree = BTStack.pop();
+                        BT<String> Lsubtree = BTStack.pop();
+                        BT<String> newBT = new BT<String>(root, Lsubtree, Rsubtree);
+                        BTStack.push(newBT);
+                        parent.push(temp);
         			}
         		}
         	}
@@ -274,6 +278,7 @@ public class BT<T> {
         	else {// Case 4: it is not an operator
         		BT<String> newTree = new BT<String>(item);
         		// add your code here
+                BTStack.push(newTree);
         	}
         	i++;
         }
@@ -283,6 +288,7 @@ public class BT<T> {
         	BT<String> Lsubtree = BTStack.pop();
         	BT<String> newBT = new BT<String>(root, Lsubtree, Rsubtree);
         	// add your code here
+            BTStack.push(newBT);
         }
         return BTStack.pop();
     }

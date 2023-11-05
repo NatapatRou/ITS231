@@ -1,5 +1,3 @@
-package lab06;
-
 /**
  * The {@code SListExtension} class provides utility methods for working with singly
  * linked lists, specifically for printing the elements vertically.

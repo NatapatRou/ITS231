@@ -1,5 +1,3 @@
-package lab06;
-
 /**
  * The {@code Stack<T>} class represents a generic stack data structure
  * implemented using a singly linked list. It provides methods for push, pop,

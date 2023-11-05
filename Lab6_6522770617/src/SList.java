@@ -1,5 +1,3 @@
-package lab06;
-
 /**
  * The {@code SList} class represents a singly linked list that can hold
  * elements of a generic type {@code T}. It provides methods for adding elements

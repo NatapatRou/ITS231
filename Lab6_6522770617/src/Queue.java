@@ -1,5 +1,3 @@
-package lab06;
-
 /**
  * A generic queue implementation using a singly linked list.
  *
